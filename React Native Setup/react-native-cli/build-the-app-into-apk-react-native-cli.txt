@@ -1,0 +1,34 @@
+// create keystore
+- open android studio
+- build apk release
+- generate keystore
+
+// add keystore file to android/app folder
+
+// open build.gradle file from android/app folder
+// add the following
+android {
+....
+  signingConfigs {
+    release {
+      storeFile file('your_key_name.jks')
+      storePassword 'your_key_store_password'
+      keyAlias 'your_key_alias'
+      keyPassword 'your_key_file_alias_password'
+      v1SigningEnabled true
+    }
+  }
+  buildTypes {
+    release {
+      ....
+      signingConfig signingConfigs.release
+    }
+  }
+}
+
+// clean project
+- cd android
+- ./gradlew clean
+
+// build apk release
+npx react-native run-android --variant=release

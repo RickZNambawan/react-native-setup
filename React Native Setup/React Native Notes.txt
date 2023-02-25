@@ -1,0 +1,34 @@
+*safeareaview only works with ios. 
+*shadow element cannot apply in android, only for ios. the only element andoid can apply 
+is elevation.
+*recyclerListView is better than Flatlist for 100+ items. it is harder than flatlist to 
+ implement but flatlist is the easiest.
+
+// encapsulated component
+- create a component then use the children argument of component then style it.
+
+// for platform specific
+Platform.OS === 'android' || 'ios'
+
+// for android if not using SafeAreaView
+Statusbar.currentHeight
+
+// for your app supports multiple orientation
+install @react-native-community/hooks
+useDeviceOrientation() // everytime the screen rotates, the orientation changes
+useDimensions() // everytime the screen rotates, the width of the screen changes
+
+// in flexbox only the following property is useful
+- flexDirection
+- flex
+- alignItems
+- justifyContent
+- alignSelf
+
+// in react-native, all the components are position as relative.
+- relative - position relative to its current position without changing other element
+- absolute - position relative to its parent container
+
+// convention
+naming folder convention - create a folder named src and attach all your files
+importing convention - seperate with a space the files you imported with files from react

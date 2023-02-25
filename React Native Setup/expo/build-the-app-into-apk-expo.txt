@@ -1,0 +1,37 @@
+// install eas cli for the first time
+npm install -g eas-cli
+
+eas login // if already log in, you are done
+eas build:configure
+eas build
+
+// if you want to build apk instead of abb
+// configure the eas.json
+add this 
+
+{
+  "cli": {
+    "version": ">= 0.54.1"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
+  }
+}
+
+// then run as 
+eas build -p android --profile preview

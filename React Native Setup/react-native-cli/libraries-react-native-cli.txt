@@ -1,0 +1,112 @@
+
+/* rename */
+npm install react-native-rename
+
+/* .env */
+npm install react-native-dotenv
+ *read instruction via react-native-variables.txt*
+
+/* .env */
+npm install react-native-config
+ *read instruction via react-native-variables.txt*
+
+/* react-native navigation */
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context
+npx pod-install ios
+
+// MainActivity.java
+import android.os.Bundle;
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(null);
+    }
+
+npm install @react-navigation/native-stack // for performance and native feeling
+npm install @react-navigation/stack // for customization
+
+/* only applicable for @react-navigation/stack */
+npm install react-native-gesture-handler
+npx pod-install iOS
+import 'react-native-gesture-handler' // import this at the top of App.js/tsx or index.js
+
+
+npm install @react-navigation/bottom-tabs
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
+npm install @react-navigation/drawer
+npm install react-native-reanimated
+plugins: ['react-native-reanimated/plugin'], // add this to babel.config.js if want to install Reanimated 2
+
+/* bottom sheet */
+npm install @gorhom/bottom-sheet
+npm install react-native-reanimated
+plugins: ['react-native-reanimated/plugin']
+
+/* tailwind css */
+// npm install tailwindcss-react-native
+// npm install --dev tailwindcss
+
+npm install nativewind
+npm install --save-dev tailwindcss
+ *read instruction via react-native-tailwind-css.txt*
+
+------------------------------------ Utility Library ------------------------------------
+/* react-native-vector-icons */
+npm install react-native-vector-icons --save
+copy all the fonts from node_module/react-native-vector-icons/Fonts 
+into assets/fonts of android/app/src/main
+import AntDesign from 'react-native-vector-icons/AntDesign'
+
+/* heroicons */
+npm i react-native-heroicons react-native-svg
+import { SparklesIcon } from "react-native-heroicons/solid";
+
+/* flashlist */
+npm i @shopify/flash-list
+npx pod-install iOS
+
+/* formik */
+npm install formik
+
+/* dropdown-picker */
+npm install @react-native-picker/picker
+
+/* lottie animation */
+npm install lottie-react-native@5.1.3
+
+/* skeleton ui */
+npm install @nlazzos/react-native-skeleton
+
+/* slider */
+import Slider from '@react-native-community/slider'
+
+/* qr generator */
+npm install @react-native-community/cameraroll
+npm install react-native-fs
+npm install react-native-qrcode-svg
+
+// add in AndroidManifest.xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+android:requestLegacyExternalStorage="true"
+
+/* qr scanner */
+npm install react-native-camera
+npm install react-native-qrcode-scanner
+npm install react-native-permissions
+
+// add om AndroidManifest.xml
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.VIBRATE"/>
+<uses-permission android:name="android.permission.CAMERA" />
+
+// add in android/app/build.gradle
+android {
+  ...
+  defaultConfig {
+    ...
+    missingDimensionStrategy 'react-native-camera', 'general' <-- insert this line
+  }
+}

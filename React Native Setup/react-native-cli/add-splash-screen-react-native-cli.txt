@@ -1,0 +1,59 @@
+* Creating Splash Screen * F7B84B
+- create splash screen with the width and height of 1100x1650
+- go to https://appicon.co/#image-sets
+- generate the splash screen
+
+* Setting up the splash screen *
+- npm install react-native-splash-screen --save
+- go to android/app/src/main/java/MainActivity.java
+- add the following code to the file
+
+import android.os.Bundle;
+import org.devio.rn.splashscreen.SplashScreen;
+
+   @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.show(this);  // here
+        super.onCreate(savedInstanceState);
+    }
+
+- go to android/app/src/main/res/
+- create a folder called layout
+- add a file called launch_screen.xml
+- add the following code in the file
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/launch_screen" android:scaleType="centerCrop" />
+</RelativeLayout>
+
+- add the drawable folder that contains the splash screens image to android/app/src/main/res directory
+
+- go to android/app/src/main/res/values
+- create a file called colors.xml
+- add the following code in the file
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_dark">#000000</color>
+</resources>
+
+* Remove white screen flashing before splash screen *
+- go to android/app/src/main/res/values/styles.xml
+- add the following line to the file
+ 
+<item name="android:windowDisablePreview">true</item>
+
+
+* Usage *
+- import the module by creating SplashScreen.js file
+- add the following code in the file
+
+import SplashScreen from 'react-native-splash-screen'
+useEffect(() => {
+   SplashScreen.hide();
+}, [])
+
+- build the project in android studio
+- clean the project using ./gradlew clean

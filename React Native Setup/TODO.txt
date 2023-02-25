@@ -1,0 +1,39 @@
+lear 'react-native-sizes-matter' library
+learn redux
+learn functional programming
+notepad app with asyncstorage
+=== * learn bottomsheet library
+=== * file organization for navigation // https://www.youtube.com/watch?v=l8nY4Alk70Q
+=== * react navigation right position //     
+
+
+* TO MAKE A RESPONSIVE IMAGE, SET WIDTH AND HEIGHT TO 100% AND RESIZEMODE TO COVER, 
+AND OVERFLOW: VISIBLE
+
+* isMounted = useRef(true)
+useEffect(() => {
+	return () => {
+	isMounted.current = false;
+}
+}, [])
+if(isMounted.current) {
+	setState();
+}
+
+- learn Styled Component
+- learn UI Scaling (Responsive UI)
+
+* If product not exist but on the user cart, then display alert "Product Not exist"
+* If product 0 quantity, then display alert "Out of Stock"
+* onRefresh Flatlist - 
+https://thewebdev.info/2022/02/19/how-to-implement-pull-to-refresh-flatlist-with-react-native/#:~:text=To%20implement%20pull%20to%20refresh%20FlatList%20with%20React%20Native%2C%20we,the%20refreshing%20and%20onRefresh%20props.&text=to%20set%20the%20refreshing%20prop,to%20false%20after%202%20seconds.
+* create a like button - determine if user in the list of likes of the product.
+
+* June 13, 2022
+- Create scroll to top (OrderScreen, OrderHistoryScreen)
+- Run emulator with Lumang phone
+- Learn React Native Paper UI
+
+- Learn Bottom ActionSheet Menu
+- Reduce Expo React Native APK size | EAS APK Build
+- Lean about Custom Development Client (expo-dev-client)

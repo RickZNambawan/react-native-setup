@@ -1,0 +1,81 @@
+1. npm install react-native-dotenv
+2. configure babel config. // add these line of code 
+"plugins": [
+    ["module:react-native-dotenv", {
+      "envName": "APP_ENV",
+      "moduleName": "@env",
+      "path": ".env",
+    }]
+  ]
+
+3. create '.env' file, then add the API KEY or any confidential variable you have
+4. create 'config' folder then add 'env.js' file
+5. import all the variables from .env then import from '@env'
+import {
+  // import the variables you have here
+} from '@env'
+
+6. create object then add all the variables on the object.
+7. export the object using ternary operator with constant variable of __DEV__ // optional since dont know about production
+8. import the env file onto the files you need. as import env from "../config/env";
+9. add .env file to .gitignore
+10. DONE!
+
+https://medium.com/simform-engineering/how-to-set-up-different-environments-in-react-native-9f7902ebf282
+
+npm install react-native-config --save
+npx pod-install ios
+
+- go to android/app/build.gradle
+- add this line:
+apply plugin: "com.android.application"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle" // <- add this line
+
+// to use the config env
+- import Config from 'react-native-config'
+console.log(Config.API_URL);
+
+
+/* configuration instructions */
+
+// for android
+// setting up different environments
+https://dev.to/leon_arantes/react-native-multiple-environments-setup-schemaflavors-3l7p
+
+// for debugging
+./gradlew installDevDebug
+./gradlew installStagDebug
+./gradlew installProdDebug
+
+// for release
+./gradlew installDevRelease
+./gradlew installStagRelease
+./gradlew installProdRelease
+
+Npx react-native run-android --variant=developmentdebug
+Npx react-native run-android --variant=developmentrelease
+Npx react-native run-android --variant=stagingdebug
+Npx react-native run-android --variant=stagingrelease
+Npx react-native run-android --variant=productiondebug
+Npx react-native run-android --variant=productionrelease
+
+// to add separate icons, splash screens you need to create another folder for src and named what the name of the flavors e.g. dev/staging/prod
+
+// for iOS
+**First script**
+rm "${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}"
+echo ".env.production" > /tmp/envfile || echo ".env.development" > /tmp/envfile || echo ".env.staging" > /tmp/envfile
+
+rm "${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}"
+echo ".env.production" > /tmp/envfile
+
+**Second script**
+"${SRCROOT}/../node_modules/react-native-config/ios/ReactNativeConfig/BuildXCConfig.rb" "${SRCROOT}/.." "${SRCROOT}/tmp.xcconfig"
+
+**podfile**
+# For extensions without React dependencies
+pod 'react-native-config/Extension', :path => '../node_modules/react-native-config'
+
+Npx react-native run-ios --scheme TargetNameDev
+Npx react-native run-ios --scheme TargetNameStg
+Npx react-native run-ios --scheme TargetName

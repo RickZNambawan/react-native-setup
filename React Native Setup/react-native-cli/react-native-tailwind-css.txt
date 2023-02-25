@@ -1,0 +1,68 @@
+// to create tailwind config
+npx tailwindcss init
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    // "./node_modules/**/*.{js,ts,jsx,tsx}",
+  ],
+  // ...
+};
+
+// babel.config.js
+module.exports = {
+  plugins: ["nativewind/babel"],
+// plugins: ["tailwindcss-react-native/babel"],
+};
+
+// import { TailwindProvider } from 'tailwindcss-react-native';
+
+- download tailwind intellisense
+
+// to create custom properties
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#000',
+        secondary: '#fff'
+      },
+      fontFamily: {
+        // fonts that are installed on assets/fonts folder
+        nunito: 'Nunito'
+      }
+    }
+  }
+};
+
+
+// WITH TYPESCRIPT
+- create a file called app.d.ts then put to src/utils folder
+- add this line of code:
+- /// <reference types="nativewind/types" />
+
+// DARK MODE
+import { useColorScheme } from "nativewind";
+const { colorScheme, setColorScheme } = useColorScheme();
+
+// toggle dark mode
+onPress={() => setColorScheme(colorScheme === "light" ? "dark" : "light")}
+
+// documentation
+https://www.nativewind.dev/api/use-color-scheme
+
+// to create reusable style
+// create a file called STYLES.js
+add the following code:
+export const TEXT = {
+  textBig: ' mt-3.5 text-xl text-black px-9 ',
+  textPadding: ' pb-10 '
+}
+// add spaces at the start and at the end to use it as a reusable in className props
+
+// to add multiple reusable style
+<Component className={[TEXT.textBig, ' mt-10 font-bold ']}> // make sure to add space at the start and end of the code
+
+// tailwind cheatsheet
+https://nerdcave.com/tailwind-cheat-sheet

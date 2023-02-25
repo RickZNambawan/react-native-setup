@@ -1,0 +1,25 @@
+For Android: https://www.youtube.com/watch?v=ANdSdIlgsEw (Publish the app to Google Playstore)
+* change the package name in package.json:
+{
+   "name": "com.org.appName"
+}
+
+* change the App Name:
+- go to strings.xml
+- android/app/src/main/res/values/strings.xml
+- change the App Name
+
+* change package name throughout the app file
+- go to AndroidManifest.xml
+- android/app/src/main/AndroidManifest.xml
+- highlight package="package name"
+- press ctrl + shift + H
+- replace to the package name you want to use like "com.org.appName"
+- click Replace All beside the replace bar
+- rename the folder name into the package name you specify
+- android/app/src/main/java/com/org/appName then move the java files into the last folder (appName)
+
+* apply all changes and sync it
+
+- cd android
+- ./gradlew clean

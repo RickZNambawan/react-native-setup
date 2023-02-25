@@ -1,0 +1,5 @@
+- go to app.json
+- change displayName: "New App Name"
+
+- go to android\app\src\main\res\values\strings.xml
+- change the name to New App Name

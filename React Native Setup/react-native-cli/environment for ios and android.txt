@@ -1,0 +1,49 @@
+
+// for debugging
+./gradlew installDevDebug
+./gradlew installStagDebug
+./gradlew installProdDebug
+
+// for release
+./gradlew installDevRelease
+./gradlew installStagRelease
+./gradlew installProdRelease
+
+// another command for debugging
+React-native run-android —variant=devDebug 
+React-native run-android —variant=stagDebug 
+React-native run-android —variant=prodDebug
+
+// setting up different environments
+https://medium.com/simform-engineering/how-to-set-up-different-environments-in-react-native-9f7902ebf282
+
+// to add separate icons, splash screens you need to create another folder for src and named what the name of the flavors e.g. dev/staging/prod
+
+// android
+- [x] Developmentdebug - (HL)
+- [ ] Developmentrelease
+- [x] Stagingdebug - (IG)
+- [x] Stagingrelease - (IG)
+- [x] Productiondebug (default)
+- [x] Productionrelease (default)
+
+
+How to Set-up Different Environments in React Native (https://medium.com/simform-engineering/how-to-set-up-different-environments-in-react-native-9f7902ebf282)
+
+https://ajaysidhu17.medium.com/configure-production-and-staging-environments-in-react-native-6c0d0faad034
+// .env
+IS_PRODUCTION=false
+API_BASE_URL=https://api.staging.foobar.com
+// .env.staging
+IS_PRODUCTION=false
+API_BASE_URL=https://api.staging.foobar.com
+// .env.production
+IS_PRODUCTION=true
+API_BASE_URL=https://api.foobar.com
+// .env.example
+IS_PRODUCTION=<true or false>
+API_BASE_URL=<API BASE URL>
+
+
+
+

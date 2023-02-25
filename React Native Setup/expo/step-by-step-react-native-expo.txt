@@ -1,0 +1,36 @@
+1. prepare for a design in figma
+2. create an expo init folder
+3. setup firebase project
+- create firestore database
+- create firebase authentication
+- create firebase cloud storage
+- set true in firestore permission
+4. after the expo folder created, push the repo to github.
+- change default branch into master branch in github
+5. create src folder, move assets folder to src
+6. modify the app.json
+7. install all packages and dependency using 'start-react-native.txt'
+8. create dot env variables from 'setup-environment-variables.txt'
+9. add .env file to .gitignore
+10. create database folder/firebase config file
+11. create necessary folder inside src folder
+12. start the app, test if firebase is working perfectly.
+13. after checking if firebase is working, 
+push the repo then commit named 'initial project'
+14. create constant file named COLORS, FONTS, AND SHADOWS inside global folder
+15. configure COLORS
+16. configure SHADOWS
+17. configure FONTS
+- create fonts folder inside assets folder
+- download fonts from googlefonts
+- pick font, styles then download the zip file.
+- move the font inside fonts 
+- add objects of Fonts in FONTS.js constant file.
+- import { useFonts } from 'expo-font' inside App.js
+- load fonts like this
+  const [loaded] = useFonts({
+    NamOfFont: require(path),
+  }); if (!loaded) return null;
+
+18. test if colors, fonts, and shadows element is working.
+19. create HeadingComponent file from h1 - h6.

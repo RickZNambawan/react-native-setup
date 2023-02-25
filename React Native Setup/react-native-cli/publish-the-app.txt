@@ -1,0 +1,6 @@
+For Android: https://www.youtube.com/watch?v=ANdSdIlgsEw
+
+- Change the package name throughout the app (read modify package name)
+
+
+** ALWAYS CHANGE THE PACKAGE VERSION ON PACKAGE.JSON WHENEVER YOU HAVE AN UPDATE ON YOUR APP TO PUBLISH!!!!

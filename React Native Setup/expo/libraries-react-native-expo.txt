@@ -1,0 +1,57 @@
+/* Starter Pack */
+// start expo for the first time
+npm install --global expo-cli
+npm install -g eas-cli // use to build apk for the app
+
+// create new app in Expo 
+expo init (nameOfFolder or ./ for currentFolder)
+expo start
+
+// install firebase
+expo install firebase@9.6.11
+
+// create dot env variables // install dotenv
+npm install react-native-dotenv
+ *read instruction how to setup environment variables*
+
+// install react navigation
+npm install @react-navigation/native
+expo install react-native-screens react-native-safe-area-context
+npm install @react-navigation/native-stack
+
+npm install @react-navigation/bottom-tabs
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
+npm install @gorhom/bottom-sheet
+npm install @react-native-masked-view/masked-view
+
+npm install @react-navigation/drawer
+expo install react-native-gesture-handler react-native-reanimated
+plugins: ['react-native-reanimated/plugin'], // add this to babel.config.js
+
+import 'react-native-gesture-handler' // import this at the top of App.js
+
+/* Utility Library */
+// install image picker 
+expo install expo-image-picker
+
+// install formik
+npm install formik
+
+// install react native elements ui/themed
+npm install @rneui/themed @rneui/base
+
+// install dropdown picker
+npm install @react-native-picker/picker
+
+// import expo vector icons
+@expo/vector-icons
+
+// import lottie animation
+expo install lottie-react-native@5.1.3
+
+// import skeleton ui
+npm install @nlazzos/react-native-skeleton
+
+// import slider
+import Slider from '@react-native-community/slider'
